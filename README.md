@@ -84,3 +84,61 @@ cp key.json.example key.json
 
 # 5. Prepare data directories
 mkdir -p data output
+
+
+## 🚀 Usage
+
+1. **Fetch comments**  
+   ```bash
+   python fetch_comments.py
+Paste a YouTube video URL when prompted (e.g., https://www.youtube.com/watch?v=YE7VzlLtp-4).
+
+Run sentiment analysis
+python sentiment_analysis.py
+Generates output/sentiment_output.csv
+Displays pie & bar charts of sentiment distribution
+Inspect results
+head -n 10 output/sentiment_output.csv
+📂 Project Structure
+
+youtube-sentiment-analysis/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── key.json.example
+├── fetch_comments.py       # Fetches comments via YouTube Data API
+├── sentiment_analysis.py   # Applies PySpark + VADER and plots charts
+├── data/                   # ── raw comments (gitignored)
+└── output/                 # ── results & images (gitignored)
+📈 Example Output
+
+<p align="center"> <img src="assets/pie_chart_example.png" alt="Pie Chart" width="300"/> &nbsp;&nbsp; <img src="assets/bar_chart_example.png" alt="Bar Chart" width="300"/> </p>
+🔧 Configuration & Best Practices
+
+API Key Security
+Store in key.json or .env only (add to .gitignore)
+Restrict by HTTP referrers or IP addresses in Google Cloud Console
+Scaling Up
+Increase maxResults or iterate through multiple pages
+Loop over a list of video IDs or entire channel playlists
+Text Preprocessing
+Clean HTML tags, emojis, URLs via regex UDFs in PySpark
+Tokenize & remove stop‑words for advanced NLP models
+🔮 Future Enhancements
+
+🔄 Automated Scheduling with Airflow or Cron
+🌐 Web Dashboard using Flask or Streamlit
+☁️ Cloud Deployment on AWS EMR / GCP Dataproc
+💾 Data Storage in Postgres, MongoDB, or S3/GCS
+📊 Word Clouds, Time‑series Analysis, Channel‑wide Reports
+📝 License
+
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+✉️ Contact
+
+Jatin Kumar Balchandani
+
+GitHub: @Jatinavi
+Email: jatinavi15@gmail.com
+Happy coding and insightful analysis! 🚀
