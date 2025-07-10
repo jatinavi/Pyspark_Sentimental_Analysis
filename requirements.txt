@@ -1,0 +1,6 @@
+pyspark
+google-api-python-client
+vaderSentiment
+pandas
+matplotlib
+seaborn
