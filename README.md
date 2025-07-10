@@ -1,116 +1,86 @@
+# 🚀 YouTube Sentiment Analysis
 
+![PySpark](https://img.shields.io/badge/PySpark-3.5.0-blue) ![VADER](https://img.shields.io/badge/VADER-NLP-green) ![Python](https://img.shields.io/badge/Python-3.8%2B-yellow) ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-````markdown
-# YouTube Sentiment Analysis
-
-Fetches comments from any public YouTube video, processes them with PySpark, applies VADER sentiment analysis, and visualizes results.
-
----
-
-## Description
-
-This tool extracts comments using the YouTube Data API v3, loads them into a PySpark DataFrame, labels each comment as **Positive**, **Neutral**, or **Negative** via VADER, and outputs both CSV files and charts for easy insights.
+A complete end‑to‑end pipeline that **fetches YouTube comments**, **processes them at scale** with PySpark, **applies VADER sentiment analysis**, and **visualizes insights** in charts and CSVs. Perfect for learning big‑data NLP workflows or building your own analytics dashboard!
 
 ---
 
-## Features
+## 🔎 Table of Contents
 
-- 🚀 **Comment Extraction**: Fetches up to 100 public comments per video  
-- ⚙️ **Scalable Processing**: Leverages PySpark for big‑data handling  
-- 📝 **Sentiment Classification**: Uses VADER for accurate NLP scoring  
-- 📊 **Visualization**: Generates pie and bar charts of sentiment distribution  
-- 💾 **CSV Output**: Raw (`data/comments.csv`) and labeled (`output/sentiment_output.csv`) data  
-
----
-
-## Prerequisites
-
-- Python 3.8+  
-- Java 8+ (for Spark)  
-- YouTube Data API v3 key  
+1. [🌟 Features](#-features)  
+2. [🛠️ Tech Stack](#️️-tech-stack)  
+3. [⚙️ Prerequisites](#️⚙️-prerequisites)  
+4. [⚡ Setup & Installation](#️⚡-setup--installation)  
+5. [🚀 Usage](#️🚀-usage)  
+6. [📂 Project Structure](#️📂-project-structure)  
+7. [📈 Example Output](#️📈-example-output)  
+8. [🔧 Configuration & Best Practices](#️🔧-configuration--best-practices)  
+9. [🔮 Future Enhancements](#️🔮-future-enhancements)  
+10. [📝 License](#️📝-license)  
+11. [✉️ Contact](#️✉️-contact)
 
 ---
 
-## Setup
+## 🌟 Features
 
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/youtube-sentiment-analysis.git
-   cd youtube-sentiment-analysis
-````
-
-2. **Create virtual environment & install**
-
-   ```bash
-   python -m venv yt_env
-   source yt_env/bin/activate      # Windows: yt_env\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Configure API Key**
-
-   ```bash
-   cp key.json.example key.json
-   # Edit key.json with your API_KEY
-   ```
-
-4. **Prepare directories**
-
-   ```bash
-   mkdir -p data output
-   ```
+- **Comment Extraction**  
+  - Fetch up to 100 top‑level public comments from any YouTube video via Data API v3  
+- **Scalable Processing**  
+  - Leverage PySpark DataFrames for fast, distributed ETL  
+- **Sentiment Classification**  
+  - Apply VADER to label comments as **Positive**, **Neutral**, or **Negative**  
+- **CSV Outputs**  
+  - Raw comments (`data/comments.csv`) & labeled results (`output/sentiment_output.csv`)  
+- **Visualization**  
+  - Auto‑generated pie & bar charts for sentiment distribution  
+- **Easy Deployment**  
+  - Containerize with Docker or integrate into CI/CD pipelines  
 
 ---
 
-## Usage
+## 🛠️ Tech Stack
 
-* **Fetch comments**
-
-  ```bash
-  python fetch_comments.py
-  ```
-
-  Paste any YouTube video URL when prompted.
-
-* **Run sentiment analysis**
-
-  ```bash
-  python sentiment_analysis.py
-  ```
-
-  Produces `output/sentiment_output.csv` and displays sentiment charts.
+| Component                    | Purpose                               |
+|------------------------------|---------------------------------------|
+| Python 3.8+                  | Core language                        |
+| PySpark                      | Distributed data processing          |
+| YouTube Data API v3          | Comment extraction                   |
+| VADER (NLTK)                 | Sentiment scoring                    |
+| pandas                       | Lightweight DataFrame manipulations  |
+| matplotlib                   | Charting library                     |
+| python-dotenv                | Environment variable management      |
+| Git & GitHub                 | Version control & repository hosting |
+| (Optional) Flask / Streamlit | Build a web dashboard                |
 
 ---
 
-## File Structure
+## ⚙️ Prerequisites
 
-```
-youtube-sentiment-analysis/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── key.json.example
-├── fetch_comments.py
-├── sentiment_analysis.py
-├── data/                # Raw comments (gitignored)
-└── output/              # Results & charts (gitignored)
-```
+1. **Python** ≥ 3.8  
+2. **Java** 8+ (for Spark)  
+3. **Apache Spark** installed or accessible  
+4. **YouTube Data API v3 key** (public data access)  
 
 ---
 
-## Contributing
+## ⚡ Setup & Installation
 
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add feature'`)
-4. Push to branch (`git push origin feature-name`)
-5. Open a Pull Request
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/youtube-sentiment-analysis.git
+cd youtube-sentiment-analysis
 
----
+# 2. Create & activate virtual environment
+python -m venv yt_env
+source yt_env/bin/activate      # Windows: yt_env\Scripts\activate
 
-## License
+# 3. Install dependencies
+pip install -r requirements.txt
 
-MIT © Jatin Kumar Balchandani
+# 4. Configure API key
+cp key.json.example key.json
+# → Edit key.json, inserting your YouTube API_KEY
 
-```
-```
+# 5. Prepare data directories
+mkdir -p data output
