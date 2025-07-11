@@ -64,27 +64,6 @@ A complete end‑to‑end pipeline that **fetches YouTube comments**, **processe
 
 ---
 
-## ⚡ Setup & Installation
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/youtube-sentiment-analysis.git
-cd youtube-sentiment-analysis
-
-# 2. Create & activate virtual environment
-python -m venv yt_env
-source yt_env/bin/activate      # Windows: yt_env\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Configure API key
-cp key.json.example key.json
-# → Edit key.json, inserting your YouTube API_KEY
-
-# 5. Prepare data directories
-mkdir -p data output
-
 
 ## 🚀 Usage
 
@@ -142,3 +121,4 @@ Jatin Kumar Balchandani
 GitHub: @Jatinavi
 Email: jatinavi15@gmail.com
 Happy coding and insightful analysis! 🚀
+
